@@ -10,7 +10,9 @@
             e.object.activity.render().find('.button--options').remove();
 
             // Hide Microphone
-            $('head').append('<style>.simple-keyboard-mic,[data-skbtn="{mic}"]{display:none!important;}</style>');
+            if (!$('#no-mic-style').length) {
+                $('head').append('<style id="no-mic-style">.simple-keyboard-mic,[data-skbtn="{mic}"]{display:none!important;}</style>');
+            }
         }
     });
 })();
